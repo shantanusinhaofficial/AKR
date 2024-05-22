@@ -89,3 +89,28 @@ footer {
 .footer-form button {
     width: 100%;
 }
+
+.last-footer{
+    display: flex;
+    margin: 40px 10px 40px 10px;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.first,
+.second,
+.third,
+.fourth,
+.social-media{
+    margin: 0px 20px 0px 20px;
+}
+.links{
+    display: flex;
+    justify-content: space-between;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
