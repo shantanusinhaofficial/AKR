@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, black, white);
+    background: linear-gradient(to bottom, #000000, #ffffff);
     color: white;
 }
 
 header {
-    background-color: black;
+    background-color: #000000;
     padding: 20px;
     text-align: center;
 }
@@ -45,13 +45,13 @@ section {
 }
 
 footer {
-    background-color: black;
+    background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
     padding: 20px;
     text-align: center;
 }
 
 .button {
-    background-color: black;
+    background-color: #000000;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -84,33 +84,79 @@ footer {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
 .footer-form button {
     width: 100%;
 }
 
-.last-footer{
+.last-footer {
     display: flex;
-    margin: 40px 10px 40px 10px;
-    justify-content: space-between;
-    align-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: flex-start;
-}
-.first,
-.second,
-.third,
-.fourth,
-.social-media{
-    margin: 0px 20px 0px 20px;
-}
-.links{
-    display: flex;
-    justify-content: space-between;
+    margin-top: 40px;
 }
 
-.center{
+.last-footer > div {
+    margin-bottom: 20px;
+}
+
+.social-media {
+    margin-right: 10px;
+}
+
+.links {
+    display: flex;
+}
+
+.center {
     display: flex;
     justify-content: center;
+}
+
+#formbutton {
+    color: rgba(var(--text-color));
+    border: 2px double transparent;
+    background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+@media (min-width: 768px) {
+    .last-footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .last-footer > div {
+        margin-bottom: 0;
+    }
+}
+
+#feedbackForm {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#feedbackForm input, 
+#feedbackForm textarea {
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 10px;
+    color: white;
+}
+
+#feedbackForm input::placeholder, 
+#feedbackForm textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#feedbackForm button {
+    flex: 0 1 auto;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
 }
