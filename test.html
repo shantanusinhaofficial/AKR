@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AKR Company</title>
     <link rel="stylesheet" href="test.css" />
-    <script src="test.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -25,39 +24,17 @@
         </ul>
       </nav>
     </header>
-    <!-- <main>
-        <section id="overview">
-            <h2>Overview</h2>
-            <p>Overview content goes here.</p>
-        </section>
-        <section id="board">
-            <h2>Board of Directors</h2>
-            <ul>
-                <li>Director 1</li>
-                <li>Director 2</li>
-                <li>Director 3</li>
-            </ul>
-        </section>
-        <section id="feedback">
-            <h2>Feedback</h2>
-            <form id="feedbackForm">
-                <input type="text" id="name" name="name" placeholder="Your Name" required />
-                <input type="email" id="email" name="email" placeholder="Your Email" required />
-                <textarea id="message" name="message" rows="1" placeholder="Your Message" required></textarea>
-                <button id="formbutton" class="button" type="submit">Submit</button>
-            </form>
-        </section>
-    </main> -->
     <footer>
       <div class="footer-form">
         <h2>Contact Us</h2>
-        <form id="contactForm">
+        <form id="contactForm" autocomplete="on">
           <input
             type="text"
             id="name"
             name="name"
             placeholder="Your Name"
             required
+            autocomplete="name"
           />
           <input
             type="email"
@@ -65,6 +42,7 @@
             name="email"
             placeholder="Your Email"
             required
+            autocomplete="email"
           />
           <textarea
             id="message"
@@ -72,10 +50,12 @@
             rows="4"
             placeholder="Your Message"
             required
+            autocomplete="on"
           ></textarea>
           <button id="formbutton" class="button" type="submit">Send</button>
         </form>
       </div>
+      <div id="localStorageData"></div>
       <div class="center">
         <div class="last-footer" id="last-footer">
           <div class="first">
@@ -128,5 +108,40 @@
       <br />
       <p>&copy; 2024 THE AKR Company. All rights reserved.</p>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contactForm");
+        contactForm.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission for testing purposes
+          alert("Contact form submitted");
+          const fd = new FormData(event.target);
+          const obj = Object.fromEntries(fd);
+          console.log(obj);
+
+          const json = JSON.stringify(obj);
+          localStorage.setItem("contactForm", json);
+
+          window.location.href = "test.html";
+        });
+
+        // Uncomment if you use a feedback form
+        // const feedbackForm = document.getElementById('feedbackForm');
+        // feedbackForm.addEventListener('submit', function(event) {
+        //   event.preventDefault(); // Prevent form submission for testing purposes
+        //   alert('Feedback form submitted');
+        // });
+
+        const json = localStorage.getItem("contactForm");
+        if (json) {
+          const obj = JSON.parse(json);
+          const localStorageDataDiv =
+            document.getElementById("localStorageData");
+          for (const key in obj) {
+            const markup = `<div><span>${key}: ${obj[key]}</span></div>`;
+            localStorageDataDiv.innerHTML += markup; // Append to the localStorageData div
+          }
+        }
+      });
+    </script>
   </body>
 </html>
