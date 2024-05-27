@@ -9,6 +9,7 @@ body {
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the image fixed during scroll */
     background-position: center; /* Centers the image */
+    font-family: 'poppins';
 }
 
 header {
