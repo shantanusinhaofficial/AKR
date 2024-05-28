@@ -1,6 +1,6 @@
 body{
     color: white;
-    background-image: url('/AKR/background_image.jpg');
+    background-image: url('/background_image.jpg');
     background-size: cover; /* Cover the entire page */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the image fixed during scroll */
