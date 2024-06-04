@@ -9,11 +9,13 @@ body {
 }
 
 main{
-    background-image: url('background_image.jpg');
-    background-size: cover; /* Cover the entire page */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Keeps the image fixed during scroll */
-    background-position: center; /* Centers the image */
+    /* background-image: url('background_image.jpg'); */
+    /* background-size: cover; Cover the entire page */
+    /* background-repeat: no-repeat; Prevents the image from repeating */
+    /* background-attachment: fixed; Keeps the image fixed during scroll */
+    /* background-position: center; Centers the image */
+    background-image: linear-gradient( 179deg,  rgba(0,0,0,1) 9.2%, rgba(127,16,16,1) 103.9% );
+
 }
 
 header {
@@ -28,6 +30,7 @@ header {
 
 .header-link{
     font-size: 15px;
+    font-weight: 900;
 }
 
 header h1 {
@@ -48,14 +51,41 @@ nav ul li a {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
+    padding: 0px 10px;
 }
 
 nav ul li a:hover {
     color: gray;
 }
 
+nav{
+  width: 524px;
+  height: 50px;
+  background: #222;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav span{
+  position: relative;
+  top: 0;
+  left:0;
+  width: 95px;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(45deg,#4f1919,#ff3333);
+}
+
 main {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 }
 
 section {
@@ -142,7 +172,7 @@ footer {
 #formbutton {
     color: rgba(var(--text-color));
     border: 2px double transparent;
-    background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
+    background-image: linear-gradient(rgb(40, 42, 87), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
     background-origin: border-box;
     background-clip: padding-box, border-box;
 }
@@ -306,7 +336,7 @@ img{
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-conic-gradient(from 117.5deg, #01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+  background: repeating-conic-gradient(from 117.5deg, #ff0000 0%, #ffffff 10%, transparent 10%, transparent 50%);
 }
 
 .icon::after {
@@ -319,7 +349,7 @@ img{
 .icon b {
   position: absolute;
   inset: 8px;
-  background: #01dbc2;
+  background: linear-gradient(45deg,#4f1919,#ff3333);
   z-index: 1;
 }
 
@@ -335,20 +365,30 @@ img{
   flex-direction: column;
   margin-left: 20px;
   font-size: 1.1em;
-  color: #fff;
+  /* color: #c94545; */
+  background: #721D1D;
+  background: linear-gradient(to right, #721D1D 0%, #CF1512 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 300;
 }
 
 .text h3 {
   font-weight: 500;
-  color: #01dbc2;
+  /* color: hsl(0, 0%, 100%); */
+  font-weight: 900;
+  background: #C83333;
+background: linear-gradient(to right, #C83333 0%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
 }
 
 .txt {
   color: #fff;
   margin-top: 50px;
   font-weight: 500;
-  border-left: 5px solid #01dbc2;
+  border-left: 5px solid #db0101;
   padding-left: 10px;
   line-height: 1em;
 }
@@ -370,14 +410,14 @@ img{
 }
 
 .sci li a:hover {
-  color: #01dbc2;
-  filter: drop-shadow(0 0 5px #01dbc2);
+  color: #db0101;
+  filter: drop-shadow(0 0 5px #ffffff);
 }
 
 .contactForm {
   position: relative;
   width: 40%;
-  background: repeating-conic-gradient(from var(--a), #01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+  background: repeating-conic-gradient(from var(--a), #db0101 0%, #ffffff 10%, transparent 10%, transparent 50%);
   animation: animate 6s linear infinite;
   padding: 60px;
 }
@@ -386,15 +426,16 @@ img{
   content: '';
   position: absolute;
   inset: 2px;
-  background: #222;
-  border: 20px solid #222;
+  background: #464242;
+  border: 20px solid #635e5e;
 }
 
 .contactForm::after {
+  box-shadow: 13px 13px 20px 0px rgb(63 33 33);
   content: '';
   position: absolute;
   inset: 2px;
-  background: #333;
+  background: #353535;
 }
 
 @property --a {
@@ -419,7 +460,12 @@ img{
 
 .contactForm form h2 {
   font-size: 2em;
-  color: #fff;
+  /* color: #fff; */
+  background: #000000;
+background: linear-gradient(to right, #000000 0%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
   font-weight: 500;
 }
 
@@ -436,8 +482,8 @@ img{
   font-size: 1.1em;
   margin: 10px 0;
   background: transparent;
-  border-bottom: 2px solid #01dbc2;
-  color: #fff;
+  border-bottom: 2px solid #fdfdfd;
+  color: #ffffff;
   outline: none;
   resize: none;
 }
@@ -449,7 +495,12 @@ img{
   padding: 5px 0;
   margin: 10px 0;
   font-size: 1.1em;
-  color: #fff;
+  /* color: #811a1a; */
+  background: #000000;
+background: linear-gradient(to right, #000000 0%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
   transition: 0.5s;
 }
 
@@ -457,15 +508,15 @@ img{
 .contactForm form .inputBox textarea:focus ~ span,
 .contactForm form .inputBox input:valid ~ span,
 .contactForm form .inputBox textarea:valid ~ span {
-  color: #01dbc2;
+  color: #ffffff;
   font-size: 0.9em;
   transform: translateY(-24px);
 }
 
 .contactForm form .inputBox input[type="submit"] {
   width: 100%;
-  background: #01dbc2;
-  color: #222;
+  background: #ffffff;
+  color: #9e0000;
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -490,4 +541,40 @@ img{
   .contactForm form {
     padding: 10px;
   }
+}
+
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+  background-color: transparent; /* Initial background color */
+  transition: background-color 0.5s ease; /* Transition effect */
+}
+
+nav ul li:hover {
+  /* background-color: rgb(177, 45, 45); Change this to your desired hover background color */
+  border-radius: 10px;
+  background: linear-gradient(45deg,#4f1919,#ff3333);
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px; /* Add padding to make the clickable area larger */
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: black;
 }

@@ -1,6 +1,7 @@
 body{
     background-color: black;
-    background-image: url(/background_image.jpg);
+    /* background-image: url(/background_image.jpg); */
+    background-image: linear-gradient( 179deg,  rgba(0,0,0,1) 9.2%, rgba(127,16,16,1) 103.9% );
     background-size: cover; /* Cover the entire page */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the image fixed during scroll */
